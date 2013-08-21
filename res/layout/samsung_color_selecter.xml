@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/tw_wifioffload_buttonbarbutton_selector_disabled_holo_light"
+        android:orientation="vertical" >
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <RadioButton
+                    android:id="@+id/color_while"
+                    android:layout_width="30dip"
+                    android:layout_height="30dip"
+                    android:layout_margin="3dip"
+                    android:background="@color/color_while"
+                    android:button="@drawable/color_button_bg"
+                    android:checked="true" />
+
+                <RadioButton
+                    android:id="@+id/color_orange"
+                    android:layout_width="30dip"
+                    android:layout_height="30dip"
+                    android:layout_margin="3dip"
+                    android:background="@color/color_orange"
+                    android:button="@drawable/color_button_bg" />
+            </LinearLayout>
+        </RadioGroup>
+
+        <com.huanghua.colorselecter.ColorPickerView
+            android:id="@+id/color_picker"
+            android:layout_width="match_parent"
+            android:layout_height="60dip" />
+    </LinearLayout>
+
+</RelativeLayout>

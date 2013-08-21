@@ -1,0 +1,66 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/wallpaper_003"
+    android:paddingLeft="30dip"
+    android:paddingRight="30dip" >
+
+    <TextView
+        android:id="@+id/logo"
+        android:layout_width="match_parent"
+        android:layout_height="60dip"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="31dip"
+        android:background="@android:color/black"
+        android:gravity="center_vertical"
+        android:inputType="none"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:text="ABCDEF"
+        android:shadowColor="#000000"
+        android:shadowDx="0.5"
+        android:shadowDy="0.5"
+        android:shadowRadius="0.5"
+        android:textColor="@android:color/white"
+        android:textSize="30sp" />
+
+    <LinearLayout
+        android:id="@+id/top_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/logo"
+        android:layout_marginTop="2dip"
+        android:orientation="horizontal" >
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <RadioButton
+                android:id="@+id/set_text_color"
+                android:layout_width="75dip"
+                android:layout_height="60dip"
+                android:layout_marginRight="10dip"
+                android:background="@drawable/set_text_color_bg"
+                android:button="@null"
+                android:checked="true" />
+
+            <RadioButton
+                android:id="@+id/set_text_bg_color"
+                android:layout_width="75dip"
+                android:layout_height="60dip"
+                android:background="@drawable/set_text_bg_color_bg"
+                android:button="@null" />
+        </RadioGroup>
+    </LinearLayout>
+
+    <com.huanghua.colorselecter.SansumColorSelecter
+        android:id="@+id/color_seleter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/top_view" >
+    </com.huanghua.colorselecter.SansumColorSelecter>
+
+</RelativeLayout>
