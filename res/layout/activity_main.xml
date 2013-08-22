@@ -3,8 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/wallpaper_003"
-    android:paddingLeft="30dip"
-    android:paddingRight="30dip" >
+    android:paddingLeft="10dip"
+    android:paddingRight="10dip" >
 
     <TextView
         android:id="@+id/logo"
@@ -19,9 +19,9 @@
         android:singleLine="true"
         android:text="ABCDEF"
         android:shadowColor="#000000"
-        android:shadowDx="0.5"
-        android:shadowDy="0.5"
-        android:shadowRadius="0.5"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="3"
         android:textColor="@android:color/white"
         android:textSize="30sp" />
 
@@ -34,6 +34,7 @@
         android:orientation="horizontal" >
 
         <RadioGroup
+            android:id="@+id/set_group"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal" >

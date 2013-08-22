@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <color name="color_1">#FFFFFF</color>
+    <color name="color_2">#FCFF2C</color>
+    <color name="color_3">#FF835D</color>
+    <color name="color_4">#FE0002</color>
+    <color name="color_5">#FF49C8</color>
+    <color name="color_6">#CB85FF</color>
+    <color name="color_7">#38A8FE</color>
+    <color name="color_8">#0001FC</color>
+    <color name="color_9">#16CC79</color>
+    <color name="color_10">#019333</color>
+    <color name="color_11">#036830</color>
+    <color name="color_12">#A5A5A5</color>
+    <color name="color_13">#727272</color>
+    <color name="color_14">#303030</color>
+    <color name="color_15">#000000</color>
+    <color name="color_16">#00FFFFFF</color>
     <color name="color_while">#FFFFFF</color>
-    <color name="color_orange">#FFFF00</color>
+    <color name="color_black">#000000</color>
 
 </resources>

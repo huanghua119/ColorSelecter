@@ -4,6 +4,7 @@ package com.huanghua.colorselecter;
 import android.app.Activity;
 import android.os.Bundle;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 public class MainActivity extends Activity {
@@ -13,6 +14,7 @@ public class MainActivity extends Activity {
     private TextView mLogo;
     private RadioButton mSetTextColor;
     private RadioButton mSetTextBGColor;
+    private RadioGroup mSetGroup;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +36,34 @@ public class MainActivity extends Activity {
                 }
             }
         });
+        mColorSelecter.setColorSelecterLinstener(new SansumColorSelecter.ColorSelecterLinstener() {
+            @Override
+            public void onColorSeleter(int color) {
+                if (mSetTextColor.isChecked()) {
+                    mLogo.setTextColor(color);
+                } else if (mSetTextBGColor.isChecked()) {
+                    mLogo.setBackgroundColor(color);
+                }
+            }
+        });
+        mSetGroup = (RadioGroup) findViewById(R.id.set_group);
+        mSetGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup arg0, int arg1) {
+                changeLastColorByRadio(arg0.getCheckedRadioButtonId());
+            }
+        });
+        changeLastColorByRadio(mSetGroup.getCheckedRadioButtonId());
     }
 
+    private void changeLastColorByRadio(int id) {
+        switch (id) {
+            case R.id.set_text_color:
+                mColorSelecter.setDIYColor(true, mColorPicker.getSelectColor());
+                break;
+            case R.id.set_text_bg_color:
+                mColorSelecter.setDIYColor(false, 0);
+                break;
+        }
+    }
 }

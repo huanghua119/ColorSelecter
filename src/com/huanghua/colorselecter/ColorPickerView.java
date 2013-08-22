@@ -48,16 +48,13 @@ public class ColorPickerView extends View {
     public ColorPickerView(Context context, AttributeSet attrs) {
         super(context, attrs);
 
-        /*
-         * mColors = new int[] { 0xFFFF0000, 0xFFFF00FF, 0xFF0000FF, 0xFF00FFFF,
-         * 0xFF00FF00, 0xFFFFFF00, 0xFFFF0000 };
-         */
         mColors = new int[] {
                 0xFFFF0000, 0xFFFFFF00, 0xFF00FF00, 0xFF00FFFF, 0xFF0000FF,
                 0xFFFF00FF, 0xFFFF0000
         };
         mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
 
+        selectColor = 0xFF00FFFF;
         mCenterPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         mCenterPaint.setColor(0xFFFF0000);
         mCenterPaint.setStrokeWidth(5);
@@ -90,7 +87,9 @@ public class ColorPickerView extends View {
         int g = ave(Color.green(c0), Color.green(c1), p);
         int b = ave(Color.blue(c0), Color.blue(c1), p);
 
-        return Color.argb(a, r, g, b);
+        selectColor = Color.argb(a, r, g, b);
+        mSelecter.changeLastColor(selectColor);
+        return selectColor;
     }
 
     private int ave(int s, int d, float p) {
@@ -117,24 +116,9 @@ public class ColorPickerView extends View {
         return true;
     }
 
-/*    private void init() {
-        int[] oc = {
-                0xffff0000, 0xffffff00, 0xff00ff00, 0xff00ffff,
-                0xff0000ff, 0xffff00ff, 0xffff0000
-        };
-        float[] op = {
-                0, 0.16667f, 0.33333f, 0.5f, 0.66667f, 0.83333f, 1
-        };
-        LinearGradient lg = new LinearGradient(0, 0, displayW, 0, oc, op,
-                TileMode.MIRROR);
-        LinearGradient lg2 = new LinearGradient(0, 0, 0, ORIHEIGHT, 0x00808080,
-                0xff808080, TileMode.MIRROR);
+    private SansumColorSelecter mSelecter;
 
-        oriColor = Bitmap.createBitmap(ORIWIDTH, ORIHEIGHT, Config.ARGB_8888);
-        Canvas c = new Canvas(oriColor);
-        paint.setShader(lg);
-        c.drawRect(0, 0, ORIWIDTH, ORIHEIGHT, paint);
-        paint.setShader(lg2);
-        c.drawRect(0, 0, ORIWIDTH, ORIHEIGHT, paint);
-    }*/
+    public void setColorSelecter(SansumColorSelecter seleteter) {
+        mSelecter = seleteter;
+    }
 }
